@@ -4,7 +4,7 @@
 
 ## プロジェクト概要
 
-**HAIR SALON TOKI**（表参道の美容室）のサービスサイトです。Claude Design で作った静的サイトで、ビルドツール・フレームワーク・パッケージ管理は使っていません。素の HTML と共通 CSS 1本で、JS は共通の `js/nav.js`（スマホ・タブレットのメニュー開閉）と、予約フォームのインラインスクリプトだけです。
+**HAIR SALON TOKI**（表参道の美容室）のサービスサイトです。Claude Design で作った静的サイトで、ビルドツール・フレームワーク・パッケージ管理は使っていません。素の HTML と共通 CSS 1本で、JS は共通の `js/nav.js`（スマホ・タブレットのメニュー開閉）、`js/coupon.js`（クーポンの適用表示）、予約フォームのインラインスクリプトだけです。
 
 - 店名・スタッフ名・価格・住所・電話番号は**仮のサンプル**です（CONTENTS.md では「（仮）」付き）。実際の店舗情報が確定したら差し替えます。
 - 仕様書は2つあり、役割が分かれています。
@@ -24,6 +24,7 @@ access.html     アクセス（情報リスト＋Google マップ iframe）
 reserve.html    予約フォーム
 css/style.css   全ページ共通のスタイルシート（1ファイルのみ。末尾にレスポンシブ用の @media）
 js/nav.js       MENU ボタンでナビのオーバーレイを開閉（全ページで defer 読み込み）
+js/coupon.js    ?coupon=… でフォームのクーポンを選択し「適用中」を表示（index・reserve で読み込み）
 images/         hero-main / style-01〜04 / staff-01〜03 / ogp（すべて JPG）
 docs/           CONTENTS.md・DESIGN.md（仕様書）
 ```
@@ -47,6 +48,7 @@ python3 -m http.server 8000   # → http://localhost:8000/
 - 見出しの英字は Anton の大文字（`.section-heading__title--xl`、`.page-hero__title`）で、小さなラベルは `.eyebrow`（Inter 11px、字間 .3em、例: `02 — STYLE`）です。
 - 画像には必ず `alt`・`width`・`height` を付けます。ファーストビュー以外は `loading="lazy"` にします。alt 文言は CONTENTS.md の指定に合わせます。
 - 英語テキストの要素には `lang="en"` を付けます。
+- クーポン：「このクーポンを使う」は `?coupon=first|weekday|referral` を付けて予約フォームへ飛ばします（トップは `?coupon=…#reservation`、メニューは `reserve.html?coupon=…#reserve-form`）。値はフォームの `select[name=coupon]` の option と一致させます。クーポンを増やすときは、両フォームの option とリンクの両方に追加します。
 - 各ページの `header.site-header` には、PC 用ナビ `nav#site-nav` と、スマホ・タブレット用の `.site-header__actions`（RESERVE ピル＋MENU ボタン）の両方があります。ヘッダーを変えるときは両方を揃えます。
 
 ## CSS の規約

@@ -68,7 +68,8 @@
       </div>
 
       <div>
-        <form id="reserve-form" class="form" action="#" method="post">
+        <form id="reserve-form" class="form" action="#" method="post" data-coupon-form>
+          <p class="coupon-applied" aria-live="polite" hidden><span class="coupon-applied__tag">適用中</span><span class="coupon-applied__name"></span></p>
           <div class="form__row">
             <label class="field"><span class="field__label">お名前<span class="field__req">必須</span></span><input type="text" name="name" placeholder="山田 花子" autocomplete="name" required></label>
             <label class="field"><span class="field__label">電話番号<span class="field__req">必須</span></span><input type="tel" name="tel" placeholder="090-0000-0000" autocomplete="tel" required></label>
@@ -102,6 +103,14 @@
               </select>
             </label>
           </div>
+          <label class="field"><span class="field__label">ご利用クーポン<span class="field__opt">任意</span></span>
+            <select name="coupon">
+              <option value="">利用しない</option>
+              <option value="first">ご新規様限定20%OFF</option>
+              <option value="weekday">平日限定トリートメント無料</option>
+              <option value="referral">お友達紹介クーポン</option>
+            </select>
+          </label>
           <label class="field"><span class="field__label">ご要望・備考<span class="field__opt">任意</span></span><textarea name="note" rows="4" placeholder="クーポンのご利用、髪のお悩みなど"></textarea></label>
           <button type="submit" class="form__submit">この内容で予約する<span aria-hidden="true">→</span></button>
         </form>
@@ -109,6 +118,7 @@
         <div id="reserve-thanks" class="thanks" role="status" tabindex="-1" hidden>
           <h2 class="thanks__title">THANK YOU</h2>
           <p class="thanks__text">ご予約リクエストを受け付けました。<br>確認のご連絡をメールまたはお電話でお送りします。</p>
+          <p class="coupon-applied" data-coupon-summary hidden><span class="coupon-applied__tag">ご利用クーポン</span><span class="coupon-applied__name"></span></p>
           <a href="index.html" class="thanks__back">BACK TO TOP →</a>
         </div>
       </div>
@@ -162,5 +172,6 @@
   })();
 </script>
 <script src="./js/nav.js" defer></script>
+<script src="./js/coupon.js" defer></script>
 </body>
 </html>

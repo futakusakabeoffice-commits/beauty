@@ -167,7 +167,7 @@
             <h3 class="coupon__name">ご新規様限定 カット＋カラー</h3>
             <p class="coupon__desc">初回のみご利用可。</p>
           </div>
-          <a href="#reservation" class="btn-line">このクーポンを使う →</a>
+          <a href="?coupon=first#reservation" class="btn-line">このクーポンを使う →</a>
         </article>
         <article class="coupon">
           <div class="coupon__top eyebrow"><span>02 — WEEKDAY</span><span class="coupon__period">毎月末まで</span></div>
@@ -176,7 +176,7 @@
             <h3 class="coupon__name">平日限定 トリートメント無料</h3>
             <p class="coupon__desc">平日14時までのご来店でトリートメントを無料付帯。</p>
           </div>
-          <a href="#reservation" class="btn-line">このクーポンを使う →</a>
+          <a href="?coupon=weekday#reservation" class="btn-line">このクーポンを使う →</a>
         </article>
         <article class="coupon">
           <div class="coupon__top eyebrow"><span>03 — REFERRAL</span><span class="coupon__period">常時ご利用可</span></div>
@@ -185,7 +185,7 @@
             <h3 class="coupon__name">お友達紹介クーポン</h3>
             <p class="coupon__desc">ご紹介いただいたお客様・紹介者ともに10%OFF。</p>
           </div>
-          <a href="#reservation" class="btn-line">このクーポンを使う →</a>
+          <a href="?coupon=referral#reservation" class="btn-line">このクーポンを使う →</a>
         </article>
       </div>
     </section>
@@ -224,7 +224,8 @@
           </div>
         </div>
 
-        <form id="home-reserve-form" class="form form--dark" action="#" method="post">
+        <form id="home-reserve-form" class="form form--dark" action="#" method="post" data-coupon-form>
+          <p class="coupon-applied" aria-live="polite" hidden><span class="coupon-applied__tag">適用中</span><span class="coupon-applied__name"></span></p>
           <label class="field"><span class="field__label">お名前<span class="field__req">必須</span></span><input type="text" name="name" placeholder="山田 花子" autocomplete="name" required></label>
           <label class="field"><span class="field__label">電話番号<span class="field__req">必須</span></span><input type="tel" name="tel" placeholder="090-0000-0000" autocomplete="tel" required></label>
           <label class="field"><span class="field__label">メールアドレス<span class="field__req">必須</span></span><input type="email" name="email" placeholder="mail@example.com" autocomplete="email" required></label>
@@ -250,6 +251,14 @@
               </select>
             </label>
           </div>
+          <label class="field"><span class="field__label">ご利用クーポン<span class="field__opt">任意</span></span>
+            <select name="coupon">
+              <option value="">利用しない</option>
+              <option value="first">ご新規様限定20%OFF</option>
+              <option value="weekday">平日限定トリートメント無料</option>
+              <option value="referral">お友達紹介クーポン</option>
+            </select>
+          </label>
           <label class="field"><span class="field__label">ご要望・備考</span><textarea name="note" rows="3"></textarea></label>
           <button type="submit" class="form__submit"><span class="form__submit-label">この内容で予約する</span><span aria-hidden="true">→</span></button>
           <p class="visually-hidden" role="status" id="home-reserve-status"></p>
@@ -307,5 +316,6 @@
   })();
 </script>
 <script src="./js/nav.js" defer></script>
+<script src="./js/coupon.js" defer></script>
 </body>
 </html>

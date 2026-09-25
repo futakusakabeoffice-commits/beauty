@@ -763,6 +763,43 @@ h1, h2, h3, p { margin: 0; }
   background: var(--c-accent);
   color: #fff;
 }
+/* Applied coupon banner (booking forms and the completion screen) */
+.coupon-applied {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px 14px;
+  padding: 16px 20px;
+  background: #fff;
+  color: var(--c-ink);
+  border: 1px solid var(--c-line-light);
+  border-left: 3px solid var(--c-accent);
+  border-radius: 4px;
+  font: 700 15px/1.5 var(--f-jp);
+}
+.coupon-applied[hidden] { display: none; }
+/* Leave room for the fixed header buttons when a coupon link jumps to the form */
+[data-coupon-form] { scroll-margin-top: 96px; }
+.coupon-applied__tag {
+  padding: 4px 12px;
+  background: var(--c-ink);
+  color: #fff;
+  border-radius: 999px;
+  font: 700 12px var(--f-jp);
+  letter-spacing: .05em;
+}
+.form--dark .coupon-applied {
+  background: var(--c-surface);
+  color: #fff;
+  border-color: rgba(255, 255, 255, .25);
+  border-left-color: var(--c-accent);
+}
+.form--dark .coupon-applied__tag {
+  background: #fff;
+  color: var(--c-ink);
+}
+
 .thanks {
   display: flex;
   flex-direction: column;
