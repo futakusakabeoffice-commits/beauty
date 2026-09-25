@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RESERVE｜HAIR SALON TOKI</title>
+<meta name="description" content="HAIR SALON TOKIのWEB予約。24時間受付中。">
+<meta property="og:title" content="RESERVE｜HAIR SALON TOKI">
+<meta property="og:description" content="HAIR SALON TOKIのWEB予約。24時間受付中。">
+<meta property="og:image" content="./images/ogp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <section id="top" class="page-hero">
+    <header class="site-header">
+      <a href="index.html" class="site-header__logo">TOKI</a>
+      <nav class="site-header__nav" aria-label="メインメニュー">
+        <a href="style.html">STYLE</a>
+        <a href="staff.html">STAFF</a>
+        <a href="menu.html">MENU</a>
+        <a href="menu.html#coupon">COUPON</a>
+        <a href="access.html">ACCESS</a>
+        <a href="reserve.html" class="btn-outline" aria-current="page">RESERVE</a>
+      </nav>
+    </header>
+    <div class="page-hero__watermark page-hero__watermark--sm" aria-hidden="true">RESERVE</div>
+    <div class="page-hero__inner">
+      <div class="page-hero__heading">
+        <nav class="breadcrumb eyebrow" aria-label="パンくずリスト">
+          <ol>
+            <li><a href="index.html">TOP</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">RESERVE</li>
+          </ol>
+        </nav>
+        <h1 class="page-hero__title">RESERVE</h1>
+      </div>
+      <p class="page-hero__lead">WEB予約は24時間受付中です。当日のご予約はお電話にてご連絡ください。</p>
+    </div>
+  </section>
+
+  <main class="reserve light">
+    <div class="reserve__grid">
+      <div class="reserve__side">
+        <div class="section-heading">
+          <div class="eyebrow">01 — WEB</div>
+          <h2 class="section-heading__title">BOOK ONLINE</h2>
+        </div>
+        <a href="tel:03-0000-0000" class="reserve__tel">
+          <span class="eyebrow">TEL — 当日のご予約</span>
+          <span class="reserve__tel-number">03-0000-0000</span>
+          <span class="reserve__tel-hours">10:00〜19:00（火曜・第3水曜定休）</span>
+        </a>
+        <a href="menu.html#coupon" class="reserve__coupon">
+          <span class="reserve__coupon-tag">ご新規様限定</span>
+          <span class="reserve__coupon-name">カット＋カラー 20%OFF</span>
+          <span class="reserve__coupon-more">COUPON →</span>
+        </a>
+      </div>
+
+      <div>
+        <form id="reserve-form" class="form" action="#" method="post">
+          <div class="form__row">
+            <label class="field"><span class="field__label">お名前<span class="field__req">必須</span></span><input type="text" name="name" placeholder="山田 花子" autocomplete="name" required></label>
+            <label class="field"><span class="field__label">電話番号<span class="field__req">必須</span></span><input type="tel" name="tel" placeholder="090-0000-0000" autocomplete="tel" required></label>
+          </div>
+          <label class="field"><span class="field__label">メールアドレス<span class="field__req">必須</span></span><input type="email" name="email" placeholder="mail@example.com" autocomplete="email" required></label>
+          <fieldset class="form__group">
+            <legend>ご希望日時</legend>
+            <div class="form__row form__row--3">
+              <label class="field"><span class="field__label">第一希望<span class="field__req">必須</span></span><input type="datetime-local" name="date1" required></label>
+              <label class="field"><span class="field__label">第二希望<span class="field__opt">任意</span></span><input type="datetime-local" name="date2"></label>
+              <label class="field"><span class="field__label">第三希望<span class="field__opt">任意</span></span><input type="datetime-local" name="date3"></label>
+            </div>
+          </fieldset>
+          <div class="form__row">
+            <label class="field"><span class="field__label">ご希望メニュー<span class="field__req">必須</span></span>
+              <select name="menu" required>
+                <option>カット</option>
+                <option>カット＋カラー</option>
+                <option>カット＋パーマ</option>
+                <option>縮毛矯正</option>
+                <option>トリートメント</option>
+                <option>その他（備考欄へ）</option>
+              </select>
+            </label>
+            <label class="field"><span class="field__label">担当スタイリスト<span class="field__opt">任意</span></span>
+              <select name="stylist">
+                <option>指名なし</option>
+                <option>佐藤 エレナ</option>
+                <option>高橋 蓮</option>
+                <option>中村 悠</option>
+              </select>
+            </label>
+          </div>
+          <label class="field"><span class="field__label">ご要望・備考<span class="field__opt">任意</span></span><textarea name="note" rows="4" placeholder="クーポンのご利用、髪のお悩みなど"></textarea></label>
+          <button type="submit" class="form__submit">この内容で予約する<span aria-hidden="true">→</span></button>
+        </form>
+
+        <div id="reserve-thanks" class="thanks" role="status" tabindex="-1" hidden>
+          <h2 class="thanks__title">THANK YOU</h2>
+          <p class="thanks__text">ご予約リクエストを受け付けました。<br>確認のご連絡をメールまたはお電話でお送りします。</p>
+          <a href="index.html" class="thanks__back">BACK TO TOP →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a href="index.html" class="site-footer__logo">TOKI</a>
+        <address class="site-footer__address">運営：HAIR SALON TOKI<br>東京都渋谷区神宮前0-0-0 TOKIビル2F</address>
+      </div>
+      <nav class="site-footer__nav" aria-label="フッターメニュー">
+        <a href="concept.html">CONCEPT</a>
+        <a href="style.html">STYLE</a>
+        <a href="staff.html">STAFF</a>
+        <a href="menu.html">MENU</a>
+        <a href="menu.html#coupon">COUPON</a>
+        <a href="access.html">ACCESS</a>
+        <a href="reserve.html">RESERVE</a>
+      </nav>
+      <nav class="site-footer__nav" aria-label="SNS">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">LINE</a>
+        <a href="#">X</a>
+      </nav>
+    </div>
+    <div class="site-footer__bottom">
+      <div class="site-footer__legal">
+        <a href="/privacy-policy">プライバシーポリシー</a>
+        <a href="/law">特定商取引法に基づく表示</a>
+      </div>
+      <a href="#top" class="eyebrow">PAGE TOP ↑</a>
+      <small class="site-footer__copy">©HAIR SALON TOKI</small>
+    </div>
+  </footer>
+
+</div>
+<script>
+  // TODO: 送信先（予約システム・メール送信API）が決まったら、ここで送信処理を行う。
+  // 現状はデザインどおり完了画面へ切り替えるのみで、入力内容はどこにも送信されない。
+  (function () {
+    var form = document.getElementById('reserve-form');
+    var thanks = document.getElementById('reserve-thanks');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      form.hidden = true;
+      thanks.hidden = false;
+      thanks.focus();
+    });
+  })();
+</script>
+</body>
+</html>
