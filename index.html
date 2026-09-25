@@ -22,7 +22,11 @@
     <div class="home-hero__shade"></div>
     <header class="site-header">
       <a href="index.html" class="site-header__logo" aria-current="page">TOKI</a>
-      <nav class="site-header__nav" aria-label="メインメニュー">
+      <div class="site-header__actions">
+        <a href="reserve.html" class="site-header__reserve">RESERVE</a>
+        <button type="button" class="site-header__menu" aria-controls="site-nav" aria-expanded="false">MENU</button>
+      </div>
+      <nav id="site-nav" class="site-header__nav" aria-label="メインメニュー">
         <a href="style.html">STYLE</a>
         <a href="staff.html">STAFF</a>
         <a href="menu.html">MENU</a>
@@ -302,5 +306,6 @@
     });
   })();
 </script>
+<script src="./js/nav.js" defer></script>
 </body>
 </html>
