@@ -93,7 +93,6 @@ python3 -m http.server 8000   # → http://localhost:8000/
 4. **仮の店舗情報**：住所・電話（`03-0000-0000`）・Google マップの埋め込み（現状は「表参道駅」で検索）はすべて仮です。
 5. **OGP**：`og:image` が相対パス（`./images/ogp.jpg`）です。ドメインが決まったら絶対 URL にします。`og:url` も未設定です。
 6. グローバルナビには CONCEPT がありません（フッターにはあります）。CONTENTS.md のナビ順とは違うので、変えるときは確認します。
-7. CONTENTS.md のスタッフ名には崩れた仮名があります（「佐藤 elena」「中村 optional」）。サイト側は「佐藤 エレナ / ELENA SATO」「中村 悠 / YU NAKAMURA」です。また `staff-01.jpg`（佐藤 エレナ）は男性、`staff-02.jpg`（高橋 蓮）は女性の写真で、名前と写真の印象が合っていない可能性があります。
 
 ## デザイン判断の原則（DESIGN.md より）
 
