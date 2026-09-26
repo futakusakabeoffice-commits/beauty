@@ -23,7 +23,7 @@ menu.html       メニュー＋クーポン（#coupon）
 access.html     アクセス（情報リスト＋Google マップ iframe）
 reserve.html    予約フォーム
 css/style.css   全ページ共通のスタイルシート（1ファイルのみ。末尾にレスポンシブ用の @media）
-js/nav.js       MENU ボタンでナビのオーバーレイを開閉（全ページで defer 読み込み）
+js/nav.js       MENU ボタンでナビのオーバーレイを開閉＋埋め込み表示時にページ遷移後の位置を先頭へ戻す（全ページで defer 読み込み）
 js/coupon.js    ?coupon=… でフォームのクーポンを選択し「適用中」を表示（index・reserve で読み込み）
 images/         hero-main / style-01〜04 / staff-01〜03 / ogp（すべて JPG）
 docs/           CONTENTS.md・DESIGN.md（仕様書）

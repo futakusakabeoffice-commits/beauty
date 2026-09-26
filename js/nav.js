@@ -1,3 +1,18 @@
+// Start a newly opened page at the top (or at its #anchor). When the site is shown inside a
+// frame whose outer page scrolls (e.g. an embedded preview), the outer scroll position would
+// otherwise carry over and the next page would open part-way down. scrollIntoView also
+// scrolls those outer frames. Back/forward keeps the browser's own scroll restoration.
+(function () {
+  var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  if (!nav || nav.type !== 'navigate' || window.self === window.top) return;
+  function toStart() {
+    var target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    (target || document.documentElement).scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
+  toStart();
+  window.addEventListener('load', toStart);
+})();
+
 // Mobile / tablet menu: the MENU button opens the header nav as a full-screen overlay (≤1023px).
 (function () {
   var header = document.querySelector('.site-header');
