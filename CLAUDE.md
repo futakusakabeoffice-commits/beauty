@@ -91,7 +91,7 @@ python3 -m http.server 8000   # → http://localhost:8000/
 
 1. **レスポンシブは PC ベースの上書き方式**：DESIGN.md は「モバイルファースト」ですが、Claude Design の PC デザインを崩さないように、PC を基準に `max-width` で上書きしています。DESIGN.md 11章の「CONTACT」ピルは、このサイトでは予約導線の「RESERVE」にしています。
 2. **予約フォームは送信しません**：`index.html` と `reserve.html` の末尾のスクリプトは、ボタンの表示を切り替えるだけです（`TODO` コメントあり）。送信先（予約システム・メール API）は未定です。
-3. **仮リンク**：SNS リンクは `href="#"` です。`/privacy-policy` と `/law` のページはまだありません。
+3. **仮リンク**：フッターの SNS リンクは仮のアカウント URL（`hairsalon_toki_sample`）で、新しいタブで開きます。本番の URL が決まったら7ページすべてと CONTENTS.md を差し替えます。`/privacy-policy` と `/law` のページはまだありません。
 4. **仮の店舗情報**：住所・電話（`03-0000-0000`）・Google マップの埋め込み（現状は「表参道駅」で検索）はすべて仮です。
 5. **OGP**：`og:image` が相対パス（`./images/ogp.jpg`）です。ドメインが決まったら絶対 URL にします。`og:url` も未設定です。
 6. グローバルナビには CONCEPT がありません（フッターにはあります）。CONTENTS.md のナビ順とは違うので、変えるときは確認します。

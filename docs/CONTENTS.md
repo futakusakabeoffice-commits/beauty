@@ -165,9 +165,9 @@ DESIGN.md（見た目の仕様）と対になり、CONTENTS.md（この文書）
 - **運営会社情報**:
   運営：HAIR SALON TOKI（東京都渋谷区神宮前0-0-0 TOKIビル2F）
 - **SNSリンク**:
-  - Instagram: {{URL}}
-  - LINE公式アカウント: {{URL}}
-  - X（Twitter）: {{URL}}
+  - Instagram: https://www.instagram.com/hairsalon_toki_sample/（仮）
+  - LINE公式アカウント: https://line.me/R/ti/p/@hairsalon_toki_sample（仮）
+  - X（Twitter）: https://x.com/hairsalon_toki_sample（仮）
 - **法務リンク**:
   - プライバシーポリシー（/privacy-policy）
   - 特定商取引法に基づく表示（/law）
