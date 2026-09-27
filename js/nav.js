@@ -1,3 +1,9 @@
+// Web fonts are linked with media="print" so they don't block the first paint; enable them now.
+(function () {
+  var links = document.querySelectorAll('link.webfonts');
+  for (var i = 0; i < links.length; i++) links[i].media = 'all';
+})();
+
 // Start a newly opened page at the top (or at its #anchor). When the site is shown inside a
 // frame whose outer page scrolls (e.g. an embedded preview), the outer scroll position would
 // otherwise carry over and the next page would open part-way down. scrollIntoView also
