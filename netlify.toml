@@ -1,0 +1,4 @@
+# Publish only the site files; docs/, tools/, CLAUDE.md etc. stay out of the public site.
+[build]
+  command = "rm -rf dist && mkdir dist && cp -r *.html *.png favicon.ico site.webmanifest robots.txt sitemap.xml css js images dist/"
+  publish = "dist"

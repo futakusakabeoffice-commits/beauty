@@ -6,13 +6,14 @@
 <title>WEB予約｜24時間受付・クーポン利用可 | HAIR SALON TOKI</title>
 <meta name="description" content="表参道の美容室HAIR SALON TOKIのWEB予約ページ。ご希望日時を第三希望まで入力し、メニュー・担当スタイリスト・ご利用クーポンを選んでお申し込みいただけます。WEB予約は24時間受付中で、確認のご連絡をメールまたはお電話でお送りします。当日のご予約はお電話（03-0000-0000）にてご連絡ください。">
 <meta name="robots" content="index, follow">
-<!-- TODO: 公開ドメインが決まったら canonical・og:url を追加し、og:image と JSON-LD の URL を絶対URLにする -->
+<link rel="canonical" href="https://salon-toki.netlify.app/reserve.html">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://salon-toki.netlify.app/reserve.html">
 <meta property="og:site_name" content="HAIR SALON TOKI">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="WEB予約｜24時間受付・クーポン利用可 | HAIR SALON TOKI">
 <meta property="og:description" content="表参道の美容室HAIR SALON TOKIのWEB予約ページ。ご希望日時を第三希望まで入力し、メニュー・担当スタイリスト・ご利用クーポンを選んでお申し込みいただけます。WEB予約は24時間受付中で、確認のご連絡をメールまたはお電話でお送りします。当日のご予約はお電話（03-0000-0000）にてご連絡ください。">
-<meta property="og:image" content="./images/ogp.jpg">
+<meta property="og:image" content="https://salon-toki.netlify.app/images/ogp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -36,11 +37,11 @@
   "@graph": [
     {
       "@type": "HairSalon",
-      "@id": "./#salon",
+      "@id": "https://salon-toki.netlify.app/#salon",
       "name": "HAIR SALON TOKI",
-      "url": "./",
-      "image": "./images/ogp.jpg",
-      "logo": "./icon-512.png",
+      "url": "https://salon-toki.netlify.app/",
+      "image": "https://salon-toki.netlify.app/images/ogp.jpg",
+      "logo": "https://salon-toki.netlify.app/icon-512.png",
       "description": "骨格・髪質・ライフスタイルに合わせた似合わせカットとカラーが得意な、表参道の少人数制プライベートサロン。",
       "telephone": "03-0000-0000",
       "priceRange": "¥1,100〜",
@@ -74,13 +75,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "TOP",
-          "item": "./"
+          "item": "https://salon-toki.netlify.app/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "RESERVE",
-          "item": "./reserve.html"
+          "item": "https://salon-toki.netlify.app/reserve.html"
         }
       ]
     }

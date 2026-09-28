@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: 公開ドメインが決まったら sitemap.xml を作成し、次の行を有効にする
-# Sitemap: https://（公開ドメイン）/sitemap.xml
+Sitemap: https://salon-toki.netlify.app/sitemap.xml

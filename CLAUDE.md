@@ -31,10 +31,19 @@ js/coupon.js    ?coupon=… でフォームのクーポンを選択し「適用�
 js/reserve-form.js  予約フォームの送信時の表示切り替え（index・reserve）
 images/         写真は WebP（原寸＋幅640pxの `-640.webp`、srcset で出し分け）、ogp.jpg は 1200×630
 favicon.ico ほか    favicon-16/32・apple-touch-icon(180)・icon-192/512・site.webmanifest（ロゴ「TOKI」から生成）
-robots.txt      全許可。Sitemap 行はドメイン確定後に有効化
+robots.txt      全許可＋Sitemap 行
+sitemap.xml     公開8ページ（404 を除く）。ページを足したら追記し lastmod を更新
+netlify.toml    Netlify のビルド設定。サイトのファイルだけを dist/ にコピーして公開（docs/・tools/・CLAUDE.md は公開しない）
 tools/update-font-subset.py  Noto Sans JP のサブセット URL を再生成
 docs/           CONTENTS.md・DESIGN.md（仕様書）
 ```
+
+## 公開（Netlify）
+
+- 公開 URL：https://salon-toki.netlify.app/ （Netlify のプロジェクト名 `salon-toki`）
+- デプロイは Netlify MCP の deploy-site で表示されるコマンドをリポジトリ直下で実行します。Netlify 側で `netlify.toml` のビルドが走り、`dist/` が公開されます。
+- 公開ファイルを増やしたら（新しい画像フォルダ・ファイル種別など）、`netlify.toml` のコピー対象にも追加します。
+- canonical・og:url・og:image・JSON-LD・sitemap.xml・robots.txt は `https://salon-toki.netlify.app/` の絶対 URL です。独自ドメインに移すときは `salon-toki.netlify.app` を全ファイルで置き換えます。
 
 ## 開発・確認
 
@@ -104,7 +113,7 @@ python3 -m http.server 8000   # → http://localhost:8000/
 2. **予約フォームは送信しません**：`js/reserve-form.js` は表示を切り替えるだけです（`TODO` コメントあり）。送信先（予約システム・メール API）は未定です。
 3. **仮リンク**：フッターの SNS リンクは仮のアカウント URL（`hairsalon_toki_sample`）で、新しいタブで開きます。本番の URL が決まったら全ページと CONTENTS.md を差し替えます。`law.html`（特商法）はまだありません。`privacy-policy.html` はドラフトです。
 4. **仮の店舗情報**：住所・電話（`03-0000-0000`）・Google マップの埋め込み（現状は「表参道駅」で検索）・JSON-LD の店舗情報はすべて仮です。コンセプトの写真（CONTENTS.md の `concept-interior.jpg`）は未用意で、`hero-main.webp` を仮に使っています。
-5. **ドメイン未定**：canonical・og:url・sitemap.xml が未設定で、og:image と JSON-LD の URL は相対パスです（`<head>` と robots.txt に TODO あり）。ドメインが決まったら絶対 URL にします。
+5. **ドメイン**：現在は Netlify のサブドメイン（salon-toki.netlify.app）です。独自ドメインにする場合は URL の置き換えと、Netlify で www 有無の統一（301）を設定します。
 6. グローバルナビには CONCEPT がありません（フッターにはあります）。CONTENTS.md のナビ順とは違うので、変えるときは確認します。
 7. **計測**：GA4 は未設置です。`js/track.js` のイベントは gtag を入れると送信されます。GA4 を入れたら、プライバシーポリシー7章（アクセス解析ツール）の内容を確認します。
 
